@@ -1,8 +1,8 @@
 import { defu } from "defu"
 import merge from "lodash.merge"
-import { barplot, bench, run, summary } from "mitata"
+import { barplot, bench, type k_statefull, run, summary } from "mitata"
 
-type State = Record<"one" | "two", { array: string[] }>
+type State = k_statefull<Record<"one" | "two", { array: string[] }>>
 
 barplot(() => {
   summary(() => {

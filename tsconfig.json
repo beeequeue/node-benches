@@ -8,6 +8,7 @@
     // Modules
     "module": "esnext",
     "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": "./src",
@@ -21,7 +22,6 @@
     "noPropertyAccessFromIndexSignature": false,
     "noUncheckedIndexedAccess": false,
     "exactOptionalPropertyTypes": false,
-    "verbatimModuleSyntax": false,
 
     // Extra types
     "types": ["node"]

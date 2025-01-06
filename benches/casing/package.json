@@ -7,10 +7,12 @@
     "start": "node --experimental-strip-types --expose-gc ./bench.ts"
   },
   "dependencies": {
-    "defu": "6.1.4",
-    "lodash.merge": "4.6.2"
+    "kasi": "1.1.0",
+    "lodash.kebabcase": "4.1.1",
+    "lodash.snakecase": "4.1.1"
   },
   "devDependencies": {
-    "@types/lodash.merge": "4.6.9"
+    "@types/lodash.kebabcase": "4.1.9",
+    "@types/lodash.snakecase": "4.1.9"
   }
 }
