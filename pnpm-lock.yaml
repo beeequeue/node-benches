@@ -30,9 +30,6 @@ importers:
       lodash.merge:
         specifier: 4.6.2
         version: 4.6.2
-      mitata:
-        specifier: 1.0.26
-        version: 1.0.26
     devDependencies:
       '@antfu/eslint-config':
         specifier: 3.12.1
@@ -52,6 +49,9 @@ importers:
       eslint:
         specifier: 9.17.0
         version: 9.17.0
+      mitata:
+        specifier: 1.0.26
+        version: 1.0.26
       nano-staged:
         specifier: 0.8.0
         version: 0.8.0
@@ -64,6 +64,15 @@ importers:
       typescript:
         specifier: 5.7.2
         version: 5.7.2
+
+  benches/lodash-merge:
+    dependencies:
+      defu:
+        specifier: 6.1.4
+        version: 6.1.4
+      lodash.merge:
+        specifier: 4.6.2
+        version: 4.6.2
 
 packages:
 
