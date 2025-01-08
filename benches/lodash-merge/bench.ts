@@ -1,4 +1,4 @@
-import { defu, createDefu } from "defu"
+import { createDefu, defu } from "defu"
 import merge from "lodash.merge"
 import { barplot, bench, group, type k_statefull, run, summary } from "mitata"
 

@@ -9,6 +9,7 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": "./src",
