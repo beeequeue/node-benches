@@ -1,69 +1,43 @@
 /* eslint-disable no-useless-computed-key */
-import { Buffer } from "node:buffer"
+import type { Buffer } from "node:buffer"
+import fs from "node:fs"
 
-import { barplot, bench, group, run, summary } from "mitata"
+import { barplot, bench, run, summary } from "mitata"
 
-import * as new_ from "./new.ts"
-import * as old from "./old.ts"
+import { decodeMsg as bufferDecode } from "./buffer.js"
+import { decodeMsg as textEncoderDecode } from "./textencoder.js"
+
+// declare module "./buffer.js" {
+//   export * from "binary-parser"
+// }
 
 barplot(() => {
   summary(() => {
-    const str = Buffer.from("Hello, World!")
-    const str2 = Buffer.from(
-      "Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World! Hello, World!",
-    )
+    const data = fs.readFileSync("fixtures/DialogMsg.msg.539100710")
 
-    group("encrypt small", () => {
-      bench("old", function* () {
-        yield {
-          [0](): Buffer {
-            return str
-          },
+    bench("Buffer.toString", function* () {
+      yield {
+        [0](): Buffer {
+          return data
+        },
 
-          bench(str: Buffer) {
-            old.encrypt(str)
-          },
-        }
-      }).gc("inner")
+        bench(data: Buffer) {
+          bufferDecode(data)
+        },
+      }
+    }).gc("once")
 
-      bench("new", function* () {
-        yield {
-          [0](): Buffer {
-            return str
-          },
+    bench("TextEncoder.encode", function* () {
+      yield {
+        [0](): Buffer {
+          return data
+        },
 
-          bench(str: Buffer) {
-            new_.encrypt(str)
-          },
-        }
-      }).gc("inner")
-    })
-
-    group("encrypt large", () => {
-      bench("old", function* () {
-        yield {
-          [0](): Buffer {
-            return str2
-          },
-
-          bench(str: Buffer) {
-            old.encrypt(str)
-          },
-        }
-      }).gc("inner")
-
-      bench("new", function* () {
-        yield {
-          [0](): Buffer {
-            return str2
-          },
-
-          bench(str: Buffer) {
-            new_.encrypt(str)
-          },
-        }
-      }).gc("inner")
-    })
+        bench(data: Buffer) {
+          textEncoderDecode(data)
+        },
+      }
+    }).gc("once")
   })
 })
 

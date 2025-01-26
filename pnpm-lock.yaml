@@ -103,6 +103,8 @@ importers:
         specifier: 21.0.3
         version: 21.0.3
 
+  benches/gmd: {}
+
   benches/lodash-merge:
     dependencies:
       defu:

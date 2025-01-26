@@ -1,0 +1,9 @@
+{
+  "name": "gmd",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node --experimental-strip-types --expose-gc ./bench.ts"
+  }
+}
