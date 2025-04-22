@@ -7,7 +7,7 @@
   "private": true,
   "packageManager": "pnpm@10.9.0",
   "engines": {
-    "node": "^22"
+    "node": "^23"
   },
   "simple-git-hooks": {
     "pre-commit": "./node_modules/.bin/nano-staged"
