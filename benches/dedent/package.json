@@ -1,0 +1,14 @@
+{
+  "name": "@bench/dedent",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --expose-gc ./bench.ts"
+  },
+  "dependencies": {
+    "@qnighy/dedent": "0.1.1",
+    "dedent": "1.7.0",
+    "ts-dedent": "2.2.0"
+  }
+}
