@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-computed-key */
 import type { Buffer } from "node:buffer"
 import fs from "node:fs"
 

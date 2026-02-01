@@ -1,8 +1,6 @@
-/* eslint-disable no-useless-computed-key */
-import { toSnakeCase, toKebabCase } from "kasi"
+import { toKebabCase } from "kasi"
 import kebabcase from "lodash.kebabcase"
-import snakecase from "lodash.snakecase"
-import { barplot, bench, group, type k_statefull, run, summary } from "mitata"
+import { barplot, bench, group, run, summary } from "mitata"
 
 barplot(() => {
   summary(() => {

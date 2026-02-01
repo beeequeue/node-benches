@@ -76,4 +76,4 @@ barplot(() => {
   })
 })
 
-await run()
+await run({ format: "json" })

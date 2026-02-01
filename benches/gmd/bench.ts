@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-computed-key */
 import fs from "node:fs"
 
 import { barplot, bench, run, summary } from "mitata"
