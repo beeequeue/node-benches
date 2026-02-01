@@ -6,7 +6,7 @@
   "author": "BeeeQueue <adam@haglund.dev>",
   "type": "module",
   "scripts": {
-    "lint": "oxlint",
+    "lint": "oxlint --type-aware --type-check",
     "run-all": "pnpm run --recursive --workspace-concurrency 1 start",
     "prepare": "simple-git-hooks"
   },
