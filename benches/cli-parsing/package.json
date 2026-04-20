@@ -1,16 +1,18 @@
 {
   "name": "@bench/cli-parsing",
-  "type": "module",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "node --expose-gc ./bench.ts"
   },
   "dependencies": {
+    "cleye": "2.6.0",
+    "gunshi": "0.29.4",
     "minimist": "1.2.8",
     "mri": "1.2.0",
     "ultraflag": "0.2.3",
-    "yargs-parser": "21.1.1"
+    "yargs-parser": "22.0.0"
   },
   "devDependencies": {
     "@types/minimist": "1.2.5",

@@ -76,6 +76,12 @@ importers:
 
   benches/cli-parsing:
     dependencies:
+      cleye:
+        specifier: 2.6.0
+        version: 2.6.0
+      gunshi:
+        specifier: 0.29.4
+        version: 0.29.4
       minimist:
         specifier: 1.2.8
         version: 1.2.8
@@ -86,8 +92,8 @@ importers:
         specifier: 0.2.3
         version: 0.2.3
       yargs-parser:
-        specifier: 21.1.1
-        version: 21.1.1
+        specifier: 22.0.0
+        version: 22.0.0
     devDependencies:
       '@types/minimist':
         specifier: 1.2.5
@@ -429,6 +435,9 @@ packages:
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
 
+  cleye@2.6.0:
+    resolution: {integrity: sha512-u0SQCsega/ox+2GSuUlG6wvA9c2FtH8sPmv9G9Q3JRTs7FK6+LtaziRAQgx7lrJ1J7bOd3palhwgZKMg8R6JbQ==}
+
   dedent@1.7.0:
     resolution: {integrity: sha512-HGFtf8yhuhGhqO07SV79tRp+br4MnbdjeVxotpn1QBl30pcLLCQjX5b2295ll0fv8RKDKsmWYrl05usHM9CewQ==}
     peerDependencies:
@@ -442,6 +451,10 @@ packages:
 
   es-toolkit@1.45.1:
     resolution: {integrity: sha512-/jhoOj/Fx+A+IIyDNOvO3TItGmlMKhtX8ISAHKE90c4b/k1tqaqEZ+uUqfpU8DMnW5cgNJv606zS55jGvza0Xw==}
+
+  gunshi@0.29.4:
+    resolution: {integrity: sha512-Dstvn5GzwR2OpYKJBjYY2YHs31J4d3ht0uKQCex2bLsOD63PmQZX59rYfk5wFhG95jmrVcwbyBzBnolkVDS5kg==}
+    engines: {node: '>= 20'}
 
   kasi@2.0.1:
     resolution: {integrity: sha512-8qhiHZ1BN26ig1+jQ9fWEk6dj8T1wuxs00QRJfXIANI4scto1EuPUgqj+mxHls52WBfdTNJGQ8yYw9rDpWUcgQ==}
@@ -493,6 +506,9 @@ packages:
     resolution: {integrity: sha512-WszCLXwT4h2k1ufIXAgsbiTOazqqevFCIncOuUBZJ91DdvWcC5+OFkluWRQPrcuSYd8fjq+o2y1QfWqYMoAToQ==}
     hasBin: true
 
+  terminal-columns@2.0.0:
+    resolution: {integrity: sha512-6IByuUjyNZJXUtwDNm+OIe62zgwwaRbH+WMNTcx05O2G5V9WhvluAAHJY8OvUdwmzMPpqAD/7EUpGdI6ae1aiQ==}
+
   tinypool@2.1.0:
     resolution: {integrity: sha512-Pugqs6M0m7Lv1I7FtxN4aoyToKg1C4tu+/381vH35y8oENM/Ai7f7C4StcoK4/+BSw9ebcS8jRiVrORFKCALLw==}
     engines: {node: ^20.0.0 || >=22.0.0}
@@ -501,15 +517,18 @@ packages:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
 
+  type-flag@4.1.0:
+    resolution: {integrity: sha512-I/K5a1jUhdFgzM3L7413akxQRzUYq4sCbef6bMAe6SrIvIdFxGZFJys5M1SiY0d0VrAjZjY4LQzppuTaLHMvSQ==}
+
   ultraflag@0.2.3:
     resolution: {integrity: sha512-RC8Q5Y72wbiDfF+LXEaFaF3j+hKt4bU6GJQSuTKJIisNXfviDV3G6UPiC8iKV+idSBshjXZGwoO/2kg7gQvnjQ==}
 
   undici-types@7.19.2:
     resolution: {integrity: sha512-qYVnV5OEm2AW8cJMCpdV20CDyaN3g0AjDlOGf1OW4iaDEx8MwdtChUp4zu4H0VP3nDRF/8RKWH+IPp9uW0YGZg==}
 
-  yargs-parser@21.1.1:
-    resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
-    engines: {node: '>=12'}
+  yargs-parser@22.0.0:
+    resolution: {integrity: sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
 snapshots:
 
@@ -673,11 +692,18 @@ snapshots:
 
   '@types/yargs-parser@21.0.3': {}
 
+  cleye@2.6.0:
+    dependencies:
+      terminal-columns: 2.0.0
+      type-flag: 4.1.0
+
   dedent@1.7.0: {}
 
   defu@6.1.4: {}
 
   es-toolkit@1.45.1: {}
+
+  gunshi@0.29.4: {}
 
   kasi@2.0.1: {}
 
@@ -753,12 +779,16 @@ snapshots:
 
   simple-git-hooks@2.13.1: {}
 
+  terminal-columns@2.0.0: {}
+
   tinypool@2.1.0: {}
 
   ts-dedent@2.2.0: {}
+
+  type-flag@4.1.0: {}
 
   ultraflag@0.2.3: {}
 
   undici-types@7.19.2: {}
 
-  yargs-parser@21.1.1: {}
+  yargs-parser@22.0.0: {}

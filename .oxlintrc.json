@@ -11,7 +11,11 @@
     "reportUnusedDisableDirectives": "warn"
   },
   "rules": {
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "typescript/consistent-type-imports": [
+      "error",
+      { "fixStyle": "inline-type-imports", "disallowTypeAnnotations": false }
+    ]
   },
   "env": {
     "node": true,
