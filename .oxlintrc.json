@@ -7,7 +7,12 @@
     "suspicious": "error",
     "perf": "error"
   },
-  "rules": {},
+  "options": {
+    "reportUnusedDisableDirectives": "warn"
+  },
+  "rules": {
+    "no-shadow": "off"
+  },
   "env": {
     "node": true,
     "es2024": true

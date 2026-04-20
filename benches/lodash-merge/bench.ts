@@ -31,6 +31,7 @@ barplot(() => {
         if (!Array.isArray(value)) return
 
         obj[key] = value
+        // oxlint-disable consistent-return
         return true
       })
 
