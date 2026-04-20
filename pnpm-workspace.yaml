@@ -1,22 +1,26 @@
 packages:
   - benches/*
 
+allowBuilds:
+  simple-git-hooks: false
+
+minimumReleaseAge: 2880
+
 overrides:
   "@eslint/markdown": "-"
   "@stylistic/eslint-plugin": "-"
   eslint-plugin-jsonc: "-"
   eslint-plugin-toml: "-"
   eslint-plugin-vue: "-"
-  eslint-processor-vue-blocks: "-"
   eslint-plugin-yml: "-"
-  jsonc-eslint-parser: "-"
-  toml-eslint-parser: "-"
-  yaml-eslint-parser: "-"
+  eslint-processor-vue-blocks: "-"
   indent-string: npm:@socketregistry/indent-string@^1
   is-core-module: npm:@socketregistry/is-core-module@^1
+  jsonc-eslint-parser: "-"
   object-assign: npm:@socketregistry/object-assign@^1
   path-parse: npm:@socketregistry/path-parse@^1
+  toml-eslint-parser: "-"
+  yaml-eslint-parser: "-"
 
 savePrefix: ""
 shellEmulator: true
-minimumReleaseAge: 2880
