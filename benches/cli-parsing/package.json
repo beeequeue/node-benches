@@ -7,7 +7,6 @@
     "start": "node --expose-gc ./bench.ts"
   },
   "dependencies": {
-    "cleye": "2.6.0",
     "gunshi": "0.29.4",
     "minimist": "1.2.8",
     "mri": "1.2.0",

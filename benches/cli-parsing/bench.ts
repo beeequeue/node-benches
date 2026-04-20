@@ -1,5 +1,6 @@
 import { parseArgs, type ParseArgsConfig } from "node:util"
 
+import { cli as gunshi, define } from "gunshi"
 import minimist from "minimist"
 import { barplot, bench, run, summary } from "mitata"
 import mri from "mri"
@@ -10,8 +11,9 @@ import pkgJson from "./package.json" with { type: "json" }
 
 barplot(() => {
   summary(() => {
-    const args =
-      "build -h -d dist --format esm --minify --target esnext --metafile".split(" ")
+    const args = "build -d dist --format esm --minify --target esnext --metafile".split(
+      " ",
+    )
 
     bench(`node:util@${process.versions.node} (no options)`, function* () {
       yield {
@@ -178,6 +180,43 @@ barplot(() => {
 
         bench(input: string[], options: yargs.Options) {
           return yargs(input, options)
+        },
+      }
+    })
+
+    bench(`gunshi@${pkgJson.dependencies["gunshi"]} (no options)`, function* () {
+      yield {
+        0(): string[] {
+          return args
+        },
+
+        async bench(input: string[]) {
+          return gunshi(input, () => {})
+        },
+      }
+    })
+
+    bench(`gunshi@${pkgJson.dependencies["gunshi"]}`, function* () {
+      yield {
+        0(): string[] {
+          return args
+        },
+
+        1() {
+          return define({
+            name: "build",
+            args: {
+              minify: { type: "boolean" },
+              metafile: { type: "boolean" },
+              outDir: { type: "string", short: "d" },
+              format: { type: "string" },
+              target: { type: "string" },
+            },
+          })
+        },
+
+        async bench(input: string[], command: any) {
+          return gunshi(input, command)
         },
       }
     })
