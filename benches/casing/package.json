@@ -7,7 +7,8 @@
     "start": "node --expose-gc ./bench.ts"
   },
   "dependencies": {
-    "kasi": "1.1.0",
+    "es-toolkit": "1.45.1",
+    "kasi": "2.0.1",
     "lodash.kebabcase": "4.1.1",
     "lodash.snakecase": "4.1.1"
   },

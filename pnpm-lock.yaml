@@ -54,9 +54,12 @@ importers:
 
   benches/casing:
     dependencies:
+      es-toolkit:
+        specifier: 1.45.1
+        version: 1.45.1
       kasi:
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 2.0.1
+        version: 2.0.1
       lodash.kebabcase:
         specifier: 4.1.1
         version: 4.1.1
@@ -104,8 +107,6 @@ importers:
       ts-dedent:
         specifier: 2.2.0
         version: 2.2.0
-
-  benches/gmd: {}
 
   benches/lodash-merge:
     dependencies:
@@ -439,8 +440,11 @@ packages:
   defu@6.1.4:
     resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
 
-  kasi@1.1.0:
-    resolution: {integrity: sha512-SvmC8+vhkDariSTz2182qyQ+mhwZ4W8TWaIHJcz358bYBeccQ8WBYj7uTtzHoCmpPHaoCm3PaOhzRg7Z8F4Lww==}
+  es-toolkit@1.45.1:
+    resolution: {integrity: sha512-/jhoOj/Fx+A+IIyDNOvO3TItGmlMKhtX8ISAHKE90c4b/k1tqaqEZ+uUqfpU8DMnW5cgNJv606zS55jGvza0Xw==}
+
+  kasi@2.0.1:
+    resolution: {integrity: sha512-8qhiHZ1BN26ig1+jQ9fWEk6dj8T1wuxs00QRJfXIANI4scto1EuPUgqj+mxHls52WBfdTNJGQ8yYw9rDpWUcgQ==}
 
   lodash.kebabcase@4.1.1:
     resolution: {integrity: sha512-N8XRTIMMqqDgSy4VLKPnJ/+hpGZN+PHQiJnSenYqPaVV/NCqEogTnAdZLQiGKhxX+JCs8waWq2t1XHWKOmlY8g==}
@@ -673,7 +677,9 @@ snapshots:
 
   defu@6.1.4: {}
 
-  kasi@1.1.0: {}
+  es-toolkit@1.45.1: {}
+
+  kasi@2.0.1: {}
 
   lodash.kebabcase@4.1.1: {}
 
