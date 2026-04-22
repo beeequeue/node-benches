@@ -1,13 +1,14 @@
 {
   "name": "bench",
-  "type": "module",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "node --expose-gc ./bench.ts"
   },
   "dependencies": {
-    "defu": "6.1.4",
+    "defu": "6.1.7",
+    "es-toolkit": "1.45.1",
     "lodash.merge": "4.6.2"
   },
   "devDependencies": {

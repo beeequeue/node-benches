@@ -1,4 +1,5 @@
 import { createDefu, defu } from "defu"
+import { merge as estoolkitMerge } from "es-toolkit"
 import merge from "lodash.merge"
 import { barplot, bench, group, type k_statefull, run, summary } from "mitata"
 
@@ -7,14 +8,23 @@ type State = k_statefull<Record<"one" | "two", { array: string[] }>>
 barplot(() => {
   summary(() => {
     group("simple", () => {
+      const args = [
+        {
+          data: [{ user: "barney" }, { user: "fred" }],
+        },
+        {
+          data: [{ age: 36 }, { age: 40 }],
+        },
+      ]
+
       bench("lodash.merge", function* (state: State) {
         const one = state.get("one")
         const two = state.get("two")
         yield () => merge(one, two)
       })
         .gc("inner")
-        .args("one", [{ array: ["b", "c"] }])
-        .args("two", [{ array: ["a"] }])
+        .args("one", [args[0]])
+        .args("two", [args[1]])
 
       bench("defu", function* (state: State) {
         const one = state.get("one")
@@ -22,8 +32,17 @@ barplot(() => {
         yield () => defu(one, two)
       })
         .gc("inner")
-        .args("one", [{ array: ["b", "c"] }])
-        .args("two", [{ array: ["a"] }])
+        .args("one", [args[0]])
+        .args("two", [args[1]])
+
+      bench("es-toolkit", function* (state: State) {
+        const one = state.get("one")
+        const two = state.get("two")
+        yield () => estoolkitMerge(one, two)
+      })
+        .gc("inner")
+        .args("one", [args[0]])
+        .args("two", [args[1]])
     })
 
     group("real", () => {
@@ -73,8 +92,17 @@ barplot(() => {
       })
         .gc("inner")
         .args({ defaults: [defaults], withoutDefaults: [withoutDefaults], args: [args] })
+
+      bench("es-toolkit", function* (state: State) {
+        const defaults = state.get("defaults")
+        const withoutDefaults = state.get("withoutDefaults")
+        const args = state.get("args")
+        yield () => estoolkitMerge(defaults, estoolkitMerge(args, withoutDefaults))
+      })
+        .gc("inner")
+        .args({ defaults: [defaults], withoutDefaults: [withoutDefaults], args: [args] })
     })
   })
 })
 
-await run({ format: "json" })
+await run()

@@ -114,8 +114,11 @@ importers:
   benches/lodash-merge:
     dependencies:
       defu:
-        specifier: 6.1.4
-        version: 6.1.4
+        specifier: 6.1.7
+        version: 6.1.7
+      es-toolkit:
+        specifier: 1.45.1
+        version: 1.45.1
       lodash.merge:
         specifier: 4.6.2
         version: 4.6.2
@@ -440,8 +443,8 @@ packages:
       babel-plugin-macros:
         optional: true
 
-  defu@6.1.4:
-    resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
+  defu@6.1.7:
+    resolution: {integrity: sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ==}
 
   es-toolkit@1.45.1:
     resolution: {integrity: sha512-/jhoOj/Fx+A+IIyDNOvO3TItGmlMKhtX8ISAHKE90c4b/k1tqaqEZ+uUqfpU8DMnW5cgNJv606zS55jGvza0Xw==}
@@ -682,7 +685,7 @@ snapshots:
 
   dedent@1.7.0: {}
 
-  defu@6.1.4: {}
+  defu@6.1.7: {}
 
   es-toolkit@1.45.1: {}
 
