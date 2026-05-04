@@ -8,6 +8,8 @@ dedupePeers: true
 dedupePeerDependents: true
 
 minimumReleaseAge: 2880
+minimumReleaseAgeExclude:
+  - tinyfixturez
 
 overrides:
   "@eslint/markdown": "-"
