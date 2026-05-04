@@ -2,9 +2,9 @@ import assert from "node:assert"
 import { matchesGlob } from "node:path"
 import { describe, it } from "node:test"
 
-import micro from "micromatch"
-import { minimatch as mini } from "minimatch"
-import pico from "picomatch"
+import micromatch from "micromatch"
+import { Minimatch } from "minimatch"
+import picomatch from "picomatch"
 import zepto from "zeptomatch"
 
 import pkgJson from "./package.json" with { type: "json" }
@@ -21,18 +21,21 @@ describe("match single file with a simple folder structure", () => {
   const path = "src/index.test.ts"
   const glob = "src/**/*.ts"
 
+  const mini = new Minimatch(glob)
   it(MINIMATCH, () => {
-    const result = mini(path, glob)
+    const result = mini.match(path)
     assert.strictEqual(result, true)
   })
 
+  const pico = picomatch(glob)
   it(PICOMATCH, () => {
-    const result = pico.isMatch(path, glob)
+    const result = pico(path)
     assert.strictEqual(result, true)
   })
 
+  const micro = micromatch.matcher(glob)
   it(MICROMATCH, () => {
-    const result = micro.isMatch(path, glob)
+    const result = micro(path)
     assert.strictEqual(result, true)
   })
 
@@ -51,18 +54,21 @@ describe("match single file with a deep folder structure", () => {
   const path = "src/foo/bar/biz/baz/index.test.ts"
   const glob = "src/**/baz/*.test.ts"
 
+  const mini = new Minimatch(glob)
   it(MINIMATCH, () => {
-    const result = mini(path, glob)
+    const result = mini.match(path)
     assert.strictEqual(result, true)
   })
 
+  const pico = picomatch(glob)
   it(PICOMATCH, () => {
-    const result = pico.isMatch(path, glob)
+    const result = pico(path)
     assert.strictEqual(result, true)
   })
 
+  const micro = micromatch.matcher(glob)
   it(MICROMATCH, () => {
-    const result = micro.isMatch(path, glob)
+    const result = micro(path)
     assert.strictEqual(result, true)
   })
 
@@ -83,18 +89,21 @@ describe("no match", () => {
   const path = "tests/foo/bar/index.test.ts"
   const glob = "src/**/*.test.ts"
 
+  const mini = new Minimatch(glob)
   it(MINIMATCH, () => {
-    const result = mini(path, glob)
+    const result = mini.match(path)
     assert.strictEqual(result, false)
   })
 
+  const pico = picomatch(glob)
   it(PICOMATCH, () => {
-    const result = pico.isMatch(path, glob)
+    const result = pico(path)
     assert.strictEqual(result, false)
   })
 
+  const micro = micromatch.matcher(glob)
   it(MICROMATCH, () => {
-    const result = micro.isMatch(path, glob)
+    const result = micro(path)
     assert.strictEqual(result, false)
   })
 

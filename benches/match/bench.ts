@@ -1,9 +1,9 @@
 import { matchesGlob } from "node:path"
 
-import micro from "micromatch"
-import { minimatch as mini } from "minimatch"
+import micromatch from "micromatch"
+import { Minimatch } from "minimatch"
 import { barplot, bench, group, run, summary } from "mitata"
-import pico from "picomatch"
+import picomatch from "picomatch"
 import zepto from "zeptomatch"
 
 import pkgJson from "./package.json" with { type: "json" }
@@ -20,11 +20,14 @@ barplot(() => {
       const path = "src/index.test.ts"
       const glob = "src/**/*.ts"
 
-      bench(MINIMATCH, () => mini(path, glob))
+      const mini = new Minimatch(glob)
+      bench(MINIMATCH, () => mini.match(path))
 
-      bench(PICOMATCH, () => pico.isMatch(path, glob))
+      const pico = picomatch(glob)
+      bench(PICOMATCH, () => pico(path))
 
-      bench(MICROMATCH, () => micro.isMatch(path, glob))
+      const micro = micromatch.matcher(glob)
+      bench(MICROMATCH, () => micro(path))
 
       bench(ZEPTOMATCH, () => zepto(glob, path))
 
@@ -35,11 +38,14 @@ barplot(() => {
       const path = "src/foo/bar/biz/baz/index.test.ts"
       const glob = "src/**/baz/*.test.ts"
 
-      bench(MINIMATCH, () => mini(path, glob))
+      const mini = new Minimatch(glob)
+      bench(MINIMATCH, () => mini.match(path))
 
-      bench(PICOMATCH, () => pico.isMatch(path, glob))
+      const pico = picomatch(glob)
+      bench(PICOMATCH, () => pico(path))
 
-      bench(MICROMATCH, () => micro.isMatch(path, glob))
+      const micro = micromatch.matcher(glob)
+      bench(MICROMATCH, () => micro(path))
 
       bench(ZEPTOMATCH, () => zepto(glob, path))
 
@@ -50,11 +56,14 @@ barplot(() => {
       const path = "tests/foo/bar/index.test.ts"
       const glob = "src/**/*.test.ts"
 
-      bench(MINIMATCH, () => mini(path, glob))
+      const mini = new Minimatch(glob)
+      bench(MINIMATCH, () => mini.match(path))
 
-      bench(PICOMATCH, () => pico.isMatch(path, glob))
+      const pico = picomatch(glob)
+      bench(PICOMATCH, () => pico(path))
 
-      bench(MICROMATCH, () => micro.isMatch(path, glob))
+      const micro = micromatch.matcher(glob)
+      bench(MICROMATCH, () => micro(path))
 
       bench(ZEPTOMATCH, () => zepto(glob, path))
 
