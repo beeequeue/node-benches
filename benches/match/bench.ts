@@ -13,6 +13,21 @@ const PICOMATCH = `picomatch@${pkgJson.dependencies.picomatch}`
 const MICROMATCH = `micromatch@${pkgJson.dependencies.micromatch}`
 const ZEPTOMATCH = `zeptomatch@${pkgJson.dependencies.zeptomatch}`
 const NODEPATHMATCH = `node:path@${process.versions.node}`
+const MEMOIZED_NODEPATHMATCH = `node:path@${process.versions.node} (memoized)`
+
+const createMemoizedMatchesGlob = () => {
+  const cache = new Map<string, boolean>()
+  const memoizedMatchesGlob = (path: string, glob: string): boolean => {
+    const key = `${path}:${glob}`
+    if (cache.has(key)) return cache.get(key)!
+
+    const result = matchesGlob(path, glob)
+    cache.set(key, result)
+    return result
+  }
+
+  return memoizedMatchesGlob
+}
 
 barplot(() => {
   summary(() => {
@@ -32,6 +47,9 @@ barplot(() => {
       bench(ZEPTOMATCH, () => zepto(glob, path))
 
       bench(NODEPATHMATCH, () => matchesGlob(path, glob))
+
+      const memoizedMatchesGlob = createMemoizedMatchesGlob()
+      bench(MEMOIZED_NODEPATHMATCH, () => memoizedMatchesGlob(path, glob))
     })
 
     group("match single file with a deep folder structure", () => {
@@ -50,6 +68,9 @@ barplot(() => {
       bench(ZEPTOMATCH, () => zepto(glob, path))
 
       bench(NODEPATHMATCH, () => matchesGlob(path, glob))
+
+      const memoizedMatchesGlob = createMemoizedMatchesGlob()
+      bench(MEMOIZED_NODEPATHMATCH, () => memoizedMatchesGlob(path, glob))
     })
 
     group("no match", () => {
@@ -68,6 +89,9 @@ barplot(() => {
       bench(ZEPTOMATCH, () => zepto(glob, path))
 
       bench(NODEPATHMATCH, () => matchesGlob(path, glob))
+
+      const memoizedMatchesGlob = createMemoizedMatchesGlob()
+      bench(MEMOIZED_NODEPATHMATCH, () => memoizedMatchesGlob(path, glob))
     })
   })
 })

@@ -14,6 +14,18 @@ const PICOMATCH = `picomatch@${pkgJson.dependencies.picomatch}`
 const MICROMATCH = `micromatch@${pkgJson.dependencies.micromatch}`
 const ZEPTOMATCH = `zeptomatch@${pkgJson.dependencies.zeptomatch}`
 const NODEPATHMATCH = `node:path@${process.versions.node}`
+const MEMOIZED_NODEPATHMATCH = `node:path@${process.versions.node} (memoized)`
+
+// memoized version of matchesGlob
+const cache = new Map<string, boolean>()
+const memoizedMatchesGlob = (path: string, glob: string): boolean => {
+  const key = `${path}:${glob}`
+  if (cache.has(key)) return cache.get(key)!
+
+  const result = matchesGlob(path, glob)
+  cache.set(key, result)
+  return result
+}
 
 // tests to ensure all libraries are producing the same results
 
@@ -46,6 +58,11 @@ describe("match single file with a simple folder structure", () => {
 
   it(NODEPATHMATCH, () => {
     const result = matchesGlob(path, glob)
+    assert.strictEqual(result, true)
+  })
+
+  it(MEMOIZED_NODEPATHMATCH, () => {
+    const result = memoizedMatchesGlob(path, glob)
     assert.strictEqual(result, true)
   })
 })
@@ -81,6 +98,11 @@ describe("match single file with a deep folder structure", () => {
     const result = matchesGlob(path, glob)
     assert.strictEqual(result, true)
   })
+
+  it(MEMOIZED_NODEPATHMATCH, () => {
+    const result = memoizedMatchesGlob(path, glob)
+    assert.strictEqual(result, true)
+  })
 })
 
 // describe("array matching multiple globs with a deep folder structure", () => {})
@@ -114,6 +136,11 @@ describe("no match", () => {
 
   it(NODEPATHMATCH, () => {
     const result = matchesGlob(path, glob)
+    assert.strictEqual(result, false)
+  })
+
+  it(MEMOIZED_NODEPATHMATCH, () => {
+    const result = memoizedMatchesGlob(path, glob)
     assert.strictEqual(result, false)
   })
 })
