@@ -7,7 +7,7 @@
     "start": "node --expose-gc ./bench.ts"
   },
   "dependencies": {
-    "gunshi": "0.29.4",
+    "gunshi": "0.29.5",
     "minimist": "1.2.8",
     "mri": "1.2.0",
     "ultraflag": "0.2.3",

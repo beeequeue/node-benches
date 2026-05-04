@@ -4,6 +4,9 @@ packages:
 allowBuilds:
   simple-git-hooks: false
 
+dedupePeers: true
+dedupePeerDependents: true
+
 minimumReleaseAge: 2880
 
 overrides:

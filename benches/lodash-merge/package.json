@@ -1,5 +1,5 @@
 {
-  "name": "bench",
+  "name": "@bench/dmerge",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "defu": "6.1.7",
-    "es-toolkit": "1.45.1",
+    "es-toolkit": "1.46.1",
     "lodash.merge": "4.6.2"
   },
   "devDependencies": {
