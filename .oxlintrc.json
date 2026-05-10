@@ -8,10 +8,18 @@
     "perf": "error"
   },
   "options": {
-    "reportUnusedDisableDirectives": "warn"
+    "reportUnusedDisableDirectives": "error"
   },
   "rules": {
     "no-shadow": "off",
+    "no-floating-promises": [
+      "error",
+      {
+        "allowForKnownSafeCalls": [
+          { "from": "package", "package": "node:test", "name": ["describe", "it", "test"] }
+        ]
+      }
+    ],
     "typescript/consistent-type-imports": [
       "error",
       { "fixStyle": "inline-type-imports", "disallowTypeAnnotations": false }

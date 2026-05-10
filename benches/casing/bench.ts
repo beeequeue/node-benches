@@ -1,7 +1,4 @@
-import {
-  kebabCase as estoolkitKebabCase,
-  snakeCase as esToolkitSnakeCase,
-} from "es-toolkit/string"
+import { kebabCase as estoolkitKebabCase, snakeCase as esToolkitSnakeCase } from "es-toolkit/string"
 import { toKebabCase as kasiKebabCase, toSnakeCase as kasiSnakeCase } from "kasi"
 import kebabcase from "lodash.kebabcase"
 import snakecase from "lodash.snakecase"

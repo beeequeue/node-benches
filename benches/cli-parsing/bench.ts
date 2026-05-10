@@ -11,9 +11,7 @@ import pkgJson from "./package.json" with { type: "json" }
 
 barplot(() => {
   summary(() => {
-    const args = "build -d dist --format esm --minify --target esnext --metafile".split(
-      " ",
-    )
+    const args = "build -d dist --format esm --minify --target esnext --metafile".split(" ")
 
     bench(`node:util@${process.versions.node} (no options)`, function* () {
       yield {

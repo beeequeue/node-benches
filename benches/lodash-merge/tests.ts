@@ -1,8 +1,9 @@
-import { describe, it } from "node:test"
-import merge from "lodash.merge"
 import assert from "node:assert"
+import { describe, it } from "node:test"
+
 import { defu } from "defu"
 import { merge as estoolkitMerge } from "es-toolkit"
+import merge from "lodash.merge"
 
 describe("simple", () => {
   const args = [
