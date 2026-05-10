@@ -19,7 +19,8 @@
     "oxfmt": "0.48.0",
     "oxlint": "1.63.0",
     "oxlint-tsgolint": "0.22.1",
-    "simple-git-hooks": "2.13.1"
+    "simple-git-hooks": "2.13.1",
+    "tinyfixturez": "0.0.5"
   },
   "simple-git-hooks": {
     "pre-commit": "./node_modules/.bin/nano-staged"

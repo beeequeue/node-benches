@@ -1,0 +1,40 @@
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+      171  2026-01-30 13:37   package/index.js
+       27  2026-01-30 13:37   package/index.mjs
+      741  2026-01-30 13:37   package/jsx.d.ts
+     2769  2026-01-30 13:37   package/package.json
+     3759  2026-01-30 13:37   package/README.md
+       37  2026-01-30 13:37   package/server-renderer/index.d.mts
+       37  2026-01-30 13:37   package/server-renderer/index.d.ts
+       49  2026-01-30 13:37   package/server-renderer/index.js
+       37  2026-01-30 13:37   package/server-renderer/index.mjs
+       50  2026-01-30 13:37   package/server-renderer/package.json
+      848  2026-01-30 13:37   package/jsx-runtime/index.d.ts
+      303  2026-01-30 13:37   package/jsx-runtime/index.js
+      265  2026-01-30 13:37   package/jsx-runtime/index.mjs
+       75  2026-01-30 13:37   package/jsx-runtime/package.json
+     2296  2026-01-30 13:37   package/dist/vue.cjs.js
+     1774  2026-01-30 13:37   package/dist/vue.cjs.prod.js
+      299  2026-01-30 13:37   package/dist/vue.d.mts
+      299  2026-01-30 13:37   package/dist/vue.d.ts
+   550840  2026-01-30 13:37   package/dist/vue.esm-browser.js
+   168934  2026-01-30 13:37   package/dist/vue.esm-browser.prod.js
+     2188  2026-01-30 13:37   package/dist/vue.esm-bundler.js
+   582906  2026-01-30 13:37   package/dist/vue.global.js
+   164101  2026-01-30 13:37   package/dist/vue.global.prod.js
+   381889  2026-01-30 13:37   package/dist/vue.runtime.esm-browser.js
+   107885  2026-01-30 13:37   package/dist/vue.runtime.esm-browser.prod.js
+      580  2026-01-30 13:37   package/dist/vue.runtime.esm-bundler.js
+   407867  2026-01-30 13:37   package/dist/vue.runtime.global.js
+   105834  2026-01-30 13:37   package/dist/vue.runtime.global.prod.js
+       46  2026-01-30 13:37   package/compiler-sfc/index.browser.js
+       34  2026-01-30 13:37   package/compiler-sfc/index.browser.mjs
+       34  2026-01-30 13:37   package/compiler-sfc/index.d.mts
+       34  2026-01-30 13:37   package/compiler-sfc/index.d.ts
+       75  2026-01-30 13:37   package/compiler-sfc/index.js
+       61  2026-01-30 13:37   package/compiler-sfc/index.mjs
+       50  2026-01-30 13:37   package/compiler-sfc/package.json
+      111  2026-01-30 13:37   package/compiler-sfc/register-ts.js
+---------                     -------
+  2487305                     36 files
