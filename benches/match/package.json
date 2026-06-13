@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node --expose-gc ./bench.ts"
+    "start": "node --expose-gc ./bench.ts",
+    "test": "node --test ./tests.ts"
   },
   "dependencies": {
     "micromatch": "4.0.8",
