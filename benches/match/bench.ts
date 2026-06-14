@@ -35,9 +35,6 @@ barplot(() => {
       const path = "src/index.test.ts"
       const glob = "src/**/*.ts"
 
-      const mini = new Minimatch(glob)
-      bench(MINIMATCH, () => mini.match(path))
-
       const pico = picomatch(glob)
       bench(PICOMATCH, () => pico(path))
 
@@ -45,6 +42,11 @@ barplot(() => {
       bench(MICROMATCH, () => micro(path))
 
       bench(ZEPTOMATCH, () => zepto(glob, path))
+
+      const mini = new Minimatch(glob)
+      bench(MINIMATCH, () => mini.match(path))
+
+      bench("minimatch no-reuse (node 26)", () => new Minimatch(glob).match(path))
 
       bench(NODEPATHMATCH, () => matchesGlob(path, glob))
 
@@ -56,9 +58,6 @@ barplot(() => {
       const path = "src/foo/bar/biz/baz/index.test.ts"
       const glob = "src/**/baz/*.test.ts"
 
-      const mini = new Minimatch(glob)
-      bench(MINIMATCH, () => mini.match(path))
-
       const pico = picomatch(glob)
       bench(PICOMATCH, () => pico(path))
 
@@ -66,6 +65,11 @@ barplot(() => {
       bench(MICROMATCH, () => micro(path))
 
       bench(ZEPTOMATCH, () => zepto(glob, path))
+
+      const mini = new Minimatch(glob)
+      bench(MINIMATCH, () => mini.match(path))
+
+      bench("minimatch no-reuse (node 26)", () => new Minimatch(glob).match(path))
 
       bench(NODEPATHMATCH, () => matchesGlob(path, glob))
 
@@ -77,9 +81,6 @@ barplot(() => {
       const path = "tests/foo/bar/index.test.ts"
       const glob = "src/**/*.test.ts"
 
-      const mini = new Minimatch(glob)
-      bench(MINIMATCH, () => mini.match(path))
-
       const pico = picomatch(glob)
       bench(PICOMATCH, () => pico(path))
 
@@ -87,6 +88,11 @@ barplot(() => {
       bench(MICROMATCH, () => micro(path))
 
       bench(ZEPTOMATCH, () => zepto(glob, path))
+
+      const mini = new Minimatch(glob)
+      bench(MINIMATCH, () => mini.match(path))
+
+      bench("minimatch no-reuse (node 26)", () => new Minimatch(glob).match(path))
 
       bench(NODEPATHMATCH, () => matchesGlob(path, glob))
 
