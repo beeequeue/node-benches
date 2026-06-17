@@ -1,0 +1,24 @@
+{
+  "name": "@bench/lru",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --expose-gc ./bench.ts",
+    "test": "node --test tests.ts"
+  },
+  "dependencies": {
+    "alleviate": "link:../../../claim",
+    "flru": "1.0.2",
+    "hashlru": "2.3.0",
+    "lru-cache": "11.5.1",
+    "lru.min": "1.1.4",
+    "lru_map": "0.4.1",
+    "picolru": "2.0.0",
+    "quick-lru": "7.3.0",
+    "tiny-lru": "13.0.0",
+    "tiny-lru11": "npm:tiny-lru@11.4.7",
+    "tiny-lru12": "npm:tiny-lru@12.0.0",
+    "ylru": "2.0.0"
+  }
+}

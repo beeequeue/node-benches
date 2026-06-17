@@ -131,6 +131,45 @@ importers:
         specifier: 4.6.9
         version: 4.6.9
 
+  benches/lru:
+    dependencies:
+      alleviate:
+        specifier: link:../../../claim
+        version: link:../../../claim
+      flru:
+        specifier: 1.0.2
+        version: 1.0.2
+      hashlru:
+        specifier: 2.3.0
+        version: 2.3.0
+      lru-cache:
+        specifier: 11.5.1
+        version: 11.5.1
+      lru.min:
+        specifier: 1.1.4
+        version: 1.1.4
+      lru_map:
+        specifier: 0.4.1
+        version: 0.4.1
+      picolru:
+        specifier: 2.0.0
+        version: 2.0.0
+      quick-lru:
+        specifier: 7.3.0
+        version: 7.3.0
+      tiny-lru:
+        specifier: 13.0.0
+        version: 13.0.0
+      tiny-lru11:
+        specifier: npm:tiny-lru@11.4.7
+        version: tiny-lru@11.4.7
+      tiny-lru12:
+        specifier: npm:tiny-lru@12.0.0
+        version: tiny-lru@12.0.0
+      ylru:
+        specifier: 2.0.0
+        version: 2.0.0
+
   benches/match:
     dependencies:
       micromatch:
@@ -154,6 +193,8 @@ importers:
         version: 4.0.3
 
   benches/remsg: {}
+
+  benches/template: {}
 
   benches/zip:
     dependencies:
@@ -647,6 +688,10 @@ packages:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
     engines: {node: '>=8'}
 
+  flru@1.0.2:
+    resolution: {integrity: sha512-kWyh8ADvHBFz6ua5xYOPnUroZTT/bwWfrCeL0Wj1dzG4/YOmOcfJ99W8dOVyyynJN35rZ9aCOtHChqQovV7yog==}
+    engines: {node: '>=6'}
+
   grammex@3.1.12:
     resolution: {integrity: sha512-6ufJOsSA7LcQehIJNCO7HIBykfM7DXQual0Ny780/DEcJIpBlHRvcqEBWGPYd7hrXL2GJ3oJI1MIhaXjWmLQOQ==}
 
@@ -657,8 +702,14 @@ packages:
     resolution: {integrity: sha512-X2iHMotAKK143WNWyatb1y+sBoIqIeXNNc9ul5oMVqyxTpN/8LVJ+YWQZ8wT35r8RzMFO3nUi+Fnt7c4QzE34g==}
     engines: {node: '>= 22'}
 
+  hashlru@2.3.0:
+    resolution: {integrity: sha512-0cMsjjIC8I+D3M44pOQdsy0OHXGLVz6Z0beRuufhKa0KfaD2wGwAev6jILzXsd3/vpnNQJmWyZtIILqM1N+n5A==}
+
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
+
+  immediato@1.1.0:
+    resolution: {integrity: sha512-6DTWQWiM3SyxAbNRDmMvFgZVwVP6wT8ciQv7GivxXejtXZFIcemC0Wlzfd/jEouJ2JroCIp4qZVloKW4BviUpQ==}
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -673,6 +724,9 @@ packages:
 
   isarray@1.0.0:
     resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
+
+  isotimer@1.0.0:
+    resolution: {integrity: sha512-1p1wborMl9fFbulXx9YBpIqFnfUn/2tN8Ne9g3GLMaiQAPmN/wLlpNOKCNT822div3Sq7LKkApZJ+6JipDUusQ==}
 
   kasi@2.0.1:
     resolution: {integrity: sha512-8qhiHZ1BN26ig1+jQ9fWEk6dj8T1wuxs00QRJfXIANI4scto1EuPUgqj+mxHls52WBfdTNJGQ8yYw9rDpWUcgQ==}
@@ -689,6 +743,17 @@ packages:
 
   lodash.snakecase@4.1.1:
     resolution: {integrity: sha512-QZ1d4xoBHYUeuouhEq3lk3Uq7ldgyFXGBhg04+oRLnIz8o9T65Eh+8YdroUwn846zchkA9yDsDl5CVVaV2nqYw==}
+
+  lru-cache@11.5.1:
+    resolution: {integrity: sha512-RPimw/7aMdv2oqRrxKwvZXcPfwBrn/JZ2xYcY9Hus/6LaS3VOAKVWKWgNLCFSiOm1ESXinjsDlidVU7JlnCN2A==}
+    engines: {node: 20 || >=22}
+
+  lru.min@1.1.4:
+    resolution: {integrity: sha512-DqC6n3QQ77zdFpCMASA1a3Jlb64Hv2N2DciFGkO/4L9+q/IpIAuRlKOvCXabtRW6cQf8usbmM6BE/TOPysCdIA==}
+    engines: {bun: '>=1.0.0', deno: '>=1.30.0', node: '>=8.0.0'}
+
+  lru_map@0.4.1:
+    resolution: {integrity: sha512-I+lBvqMMFfqaV8CJCISjI3wbjmwVu/VyOoU7+qtu9d7ioW5klMgsTTiUOUp+DJvfTTzKXoPbyC6YfgkNcyPSOg==}
 
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
@@ -758,6 +823,9 @@ packages:
   pend@1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
 
+  picolru@2.0.0:
+    resolution: {integrity: sha512-LPWNtsX8E4H8CGo+9yhHHif+LC3LRV3kf0t0ksl+91lGHdWf4ZsMA8HusJzyOpzvRJExACO8RkQPckuy4uO5QA==}
+
   picomatch@2.3.2:
     resolution: {integrity: sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==}
     engines: {node: '>=8.6'}
@@ -772,6 +840,10 @@ packages:
   process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
+
+  quick-lru@7.3.0:
+    resolution: {integrity: sha512-k9lSsjl36EJdK7I06v7APZCbyGT2vMTsYSRX1Q2nbYmnkBqgUhRkAuzH08Ciotteu/PLJmIF2+tti7o3C/ts2g==}
+    engines: {node: '>=18'}
 
   readable-stream@2.3.8:
     resolution: {integrity: sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==}
@@ -811,6 +883,18 @@ packages:
 
   text-decoder@1.2.7:
     resolution: {integrity: sha512-vlLytXkeP4xvEq2otHeJfSQIRyWxo/oZGEbXrtEEF9Hnmrdly59sUbzZ/QgyWuLYHctCHxFF4tRQZNQ9k60ExQ==}
+
+  tiny-lru@11.4.7:
+    resolution: {integrity: sha512-w/Te7uMUVeH0CR8vZIjr+XiN41V+30lkDdK+NRIDCUYKKuL9VcmaUEmaPISuwGhLlrTGh5yu18lENtR9axSxYw==}
+    engines: {node: '>=12'}
+
+  tiny-lru@12.0.0:
+    resolution: {integrity: sha512-MKfpesxB741PWeW8jnfm8eEWWJBDjCitj3V9V8kbdgk61ePHJjvMwlomSaZmN/jQyjJ+QUNeeCD01IpEAUB/3g==}
+    engines: {node: '>=14'}
+
+  tiny-lru@13.0.0:
+    resolution: {integrity: sha512-xDHxKKS1FdF0Tv2P+QT7IeSEg74K/8cEDzbv3Tv6UyHHUgBOjOiQiBp818MGj66dhurQus/IBcoAbwIKtSGc6Q==}
+    engines: {node: '>=14'}
 
   tinyexec@1.2.4:
     resolution: {integrity: sha512-SHf/r48b7vOrjve9PxJo3MN5v5yuyjHvdUcrQffT3WXMUfnGmHDVbC4k3sHJaJTgZCwpUplIaAo5ANtMyp3YHg==}
@@ -854,6 +938,10 @@ packages:
 
   yazl@3.3.1:
     resolution: {integrity: sha512-BbETDVWG+VcMUle37k5Fqp//7SDOK2/1+T7X8TD96M3D9G8jK5VLUdQVdVjGi8im7FGkazX7kk5hkU8X4L5Bng==}
+
+  ylru@2.0.0:
+    resolution: {integrity: sha512-T6hTrKcr9lKeUG0MQ/tO72D3UGptWVohgzpHG8ljU1jeBt2RCjcWxvsTPD8ZzUq1t1FvwROAw1kxg2euvg/THg==}
+    engines: {node: '>= 18.19.0'}
 
   yocto-queue@1.2.2:
     resolution: {integrity: sha512-4LCcse/U2MHZ63HAJVE+v71o7yOdIe4cZ70Wpf8D/IyjDKYQLV5GD46B+hSTjJsvV5PztjvHoU580EftxjDZFQ==}
@@ -1165,13 +1253,19 @@ snapshots:
     dependencies:
       to-regex-range: 5.0.1
 
+  flru@1.0.2: {}
+
   grammex@3.1.12: {}
 
   graphmatch@1.1.1: {}
 
   gunshi@0.34.0: {}
 
+  hashlru@2.3.0: {}
+
   ieee754@1.2.1: {}
+
+  immediato@1.1.0: {}
 
   inherits@2.0.4: {}
 
@@ -1180,6 +1274,10 @@ snapshots:
   is-stream@4.0.1: {}
 
   isarray@1.0.0: {}
+
+  isotimer@1.0.0:
+    dependencies:
+      immediato: 1.1.0
 
   kasi@2.0.1: {}
 
@@ -1192,6 +1290,12 @@ snapshots:
   lodash.merge@4.6.2: {}
 
   lodash.snakecase@4.1.1: {}
+
+  lru-cache@11.5.1: {}
+
+  lru.min@1.1.4: {}
+
+  lru_map@0.4.1: {}
 
   micromatch@4.0.8:
     dependencies:
@@ -1276,6 +1380,10 @@ snapshots:
 
   pend@1.2.0: {}
 
+  picolru@2.0.0:
+    dependencies:
+      isotimer: 1.0.0
+
   picomatch@2.3.2: {}
 
   picomatch@4.0.4: {}
@@ -1283,6 +1391,8 @@ snapshots:
   process-nextick-args@2.0.1: {}
 
   process@0.11.10: {}
+
+  quick-lru@7.3.0: {}
 
   readable-stream@2.3.8:
     dependencies:
@@ -1353,6 +1463,12 @@ snapshots:
     transitivePeerDependencies:
       - react-native-b4a
 
+  tiny-lru@11.4.7: {}
+
+  tiny-lru@12.0.0: {}
+
+  tiny-lru@13.0.0: {}
+
   tinyexec@1.2.4: {}
 
   tinyfixturez@0.0.5:
@@ -1384,6 +1500,8 @@ snapshots:
   yazl@3.3.1:
     dependencies:
       buffer-crc32: 1.0.0
+
+  ylru@2.0.0: {}
 
   yocto-queue@1.2.2: {}
 
