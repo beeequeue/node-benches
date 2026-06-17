@@ -9,7 +9,7 @@ dedupePeerDependents: true
 
 minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
-  - tinyfixturez
+  - alleviate@0.0.0-alpha.2
 
 overrides:
   "@eslint/markdown": "-"

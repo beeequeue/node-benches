@@ -40,6 +40,9 @@ export class SemverLRUCache {
   }
 
   // added for consistency with other benchmarks
+  has(key: any) {
+    return this.map.has(key)
+  }
   clear() {
     this.map.clear()
   }

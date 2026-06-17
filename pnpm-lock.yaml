@@ -134,38 +134,23 @@ importers:
   benches/lru:
     dependencies:
       alleviate:
-        specifier: link:../../../claim
-        version: link:../../../claim
+        specifier: 0.0.0-alpha.2
+        version: 0.0.0-alpha.2
       flru:
         specifier: 1.0.2
         version: 1.0.2
-      hashlru:
-        specifier: 2.3.0
-        version: 2.3.0
       lru-cache:
         specifier: 11.5.1
         version: 11.5.1
-      lru.min:
-        specifier: 1.1.4
-        version: 1.1.4
       lru_map:
         specifier: 0.4.1
         version: 0.4.1
-      picolru:
-        specifier: 2.0.0
-        version: 2.0.0
       quick-lru:
         specifier: 7.3.0
         version: 7.3.0
       tiny-lru:
         specifier: 13.0.0
         version: 13.0.0
-      tiny-lru11:
-        specifier: npm:tiny-lru@11.4.7
-        version: tiny-lru@11.4.7
-      tiny-lru12:
-        specifier: npm:tiny-lru@12.0.0
-        version: tiny-lru@12.0.0
       ylru:
         specifier: 2.0.0
         version: 2.0.0
@@ -559,6 +544,10 @@ packages:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
     engines: {node: '>=6.5'}
 
+  alleviate@0.0.0-alpha.2:
+    resolution: {integrity: sha512-YA1teogUP5WvvyQQ3NOM81zLTRSOg0Jw7vQPqLr1v2agg2+pRwXr3oQEES9YvoAQc4HeIUBEyT5J0AKHIE2j7g==}
+    engines: {node: ^22 || ^24 || ^26 || ^27}
+
   archiver@8.0.0:
     resolution: {integrity: sha512-fV1orZfsnPn9BaSByR/qE67rJCLJEy2Ox5bq7nJh+jquWaNh6Sfec75kJ2T6PtdGUbPQlrVoSVCEOa5SdiTQ1g==}
     engines: {node: '>=18'}
@@ -702,14 +691,8 @@ packages:
     resolution: {integrity: sha512-X2iHMotAKK143WNWyatb1y+sBoIqIeXNNc9ul5oMVqyxTpN/8LVJ+YWQZ8wT35r8RzMFO3nUi+Fnt7c4QzE34g==}
     engines: {node: '>= 22'}
 
-  hashlru@2.3.0:
-    resolution: {integrity: sha512-0cMsjjIC8I+D3M44pOQdsy0OHXGLVz6Z0beRuufhKa0KfaD2wGwAev6jILzXsd3/vpnNQJmWyZtIILqM1N+n5A==}
-
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
-
-  immediato@1.1.0:
-    resolution: {integrity: sha512-6DTWQWiM3SyxAbNRDmMvFgZVwVP6wT8ciQv7GivxXejtXZFIcemC0Wlzfd/jEouJ2JroCIp4qZVloKW4BviUpQ==}
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -724,9 +707,6 @@ packages:
 
   isarray@1.0.0:
     resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
-
-  isotimer@1.0.0:
-    resolution: {integrity: sha512-1p1wborMl9fFbulXx9YBpIqFnfUn/2tN8Ne9g3GLMaiQAPmN/wLlpNOKCNT822div3Sq7LKkApZJ+6JipDUusQ==}
 
   kasi@2.0.1:
     resolution: {integrity: sha512-8qhiHZ1BN26ig1+jQ9fWEk6dj8T1wuxs00QRJfXIANI4scto1EuPUgqj+mxHls52WBfdTNJGQ8yYw9rDpWUcgQ==}
@@ -747,10 +727,6 @@ packages:
   lru-cache@11.5.1:
     resolution: {integrity: sha512-RPimw/7aMdv2oqRrxKwvZXcPfwBrn/JZ2xYcY9Hus/6LaS3VOAKVWKWgNLCFSiOm1ESXinjsDlidVU7JlnCN2A==}
     engines: {node: 20 || >=22}
-
-  lru.min@1.1.4:
-    resolution: {integrity: sha512-DqC6n3QQ77zdFpCMASA1a3Jlb64Hv2N2DciFGkO/4L9+q/IpIAuRlKOvCXabtRW6cQf8usbmM6BE/TOPysCdIA==}
-    engines: {bun: '>=1.0.0', deno: '>=1.30.0', node: '>=8.0.0'}
 
   lru_map@0.4.1:
     resolution: {integrity: sha512-I+lBvqMMFfqaV8CJCISjI3wbjmwVu/VyOoU7+qtu9d7ioW5klMgsTTiUOUp+DJvfTTzKXoPbyC6YfgkNcyPSOg==}
@@ -823,9 +799,6 @@ packages:
   pend@1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
 
-  picolru@2.0.0:
-    resolution: {integrity: sha512-LPWNtsX8E4H8CGo+9yhHHif+LC3LRV3kf0t0ksl+91lGHdWf4ZsMA8HusJzyOpzvRJExACO8RkQPckuy4uO5QA==}
-
   picomatch@2.3.2:
     resolution: {integrity: sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==}
     engines: {node: '>=8.6'}
@@ -883,14 +856,6 @@ packages:
 
   text-decoder@1.2.7:
     resolution: {integrity: sha512-vlLytXkeP4xvEq2otHeJfSQIRyWxo/oZGEbXrtEEF9Hnmrdly59sUbzZ/QgyWuLYHctCHxFF4tRQZNQ9k60ExQ==}
-
-  tiny-lru@11.4.7:
-    resolution: {integrity: sha512-w/Te7uMUVeH0CR8vZIjr+XiN41V+30lkDdK+NRIDCUYKKuL9VcmaUEmaPISuwGhLlrTGh5yu18lENtR9axSxYw==}
-    engines: {node: '>=12'}
-
-  tiny-lru@12.0.0:
-    resolution: {integrity: sha512-MKfpesxB741PWeW8jnfm8eEWWJBDjCitj3V9V8kbdgk61ePHJjvMwlomSaZmN/jQyjJ+QUNeeCD01IpEAUB/3g==}
-    engines: {node: '>=14'}
 
   tiny-lru@13.0.0:
     resolution: {integrity: sha512-xDHxKKS1FdF0Tv2P+QT7IeSEg74K/8cEDzbv3Tv6UyHHUgBOjOiQiBp818MGj66dhurQus/IBcoAbwIKtSGc6Q==}
@@ -1141,6 +1106,8 @@ snapshots:
     dependencies:
       event-target-shim: 5.0.1
 
+  alleviate@0.0.0-alpha.2: {}
+
   archiver@8.0.0:
     dependencies:
       async: 3.2.6
@@ -1261,11 +1228,7 @@ snapshots:
 
   gunshi@0.34.0: {}
 
-  hashlru@2.3.0: {}
-
   ieee754@1.2.1: {}
-
-  immediato@1.1.0: {}
 
   inherits@2.0.4: {}
 
@@ -1274,10 +1237,6 @@ snapshots:
   is-stream@4.0.1: {}
 
   isarray@1.0.0: {}
-
-  isotimer@1.0.0:
-    dependencies:
-      immediato: 1.1.0
 
   kasi@2.0.1: {}
 
@@ -1292,8 +1251,6 @@ snapshots:
   lodash.snakecase@4.1.1: {}
 
   lru-cache@11.5.1: {}
-
-  lru.min@1.1.4: {}
 
   lru_map@0.4.1: {}
 
@@ -1380,10 +1337,6 @@ snapshots:
 
   pend@1.2.0: {}
 
-  picolru@2.0.0:
-    dependencies:
-      isotimer: 1.0.0
-
   picomatch@2.3.2: {}
 
   picomatch@4.0.4: {}
@@ -1462,10 +1415,6 @@ snapshots:
       b4a: 1.8.1
     transitivePeerDependencies:
       - react-native-b4a
-
-  tiny-lru@11.4.7: {}
-
-  tiny-lru@12.0.0: {}
 
   tiny-lru@13.0.0: {}
 

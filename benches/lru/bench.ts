@@ -25,32 +25,20 @@ type Cache<K, V> = {
 }
 
 const caches = new Map<string, (amount: number) => Cache<any, any>>([
-  [`alleviate@0:createLRU`, (max: number) => createLRU({ max })],
+  [`alleviate@${pkgJson.dependencies.alleviate}`, (max: number) => createLRU({ max })],
   // @ts-expect-error: ???
   [`flru@${pkgJson.dependencies.flru}`, (amount: number) => FLRU(amount)],
-  // @ts-expect-error: ???
-  // [`hashlru@${pkgJson.dependencies.hashlru}`, (amount: number) => HashLRU(amount)],
   [
     `lru-cache@${pkgJson.dependencies["lru-cache"]}`,
     (amount: number) => new LRUCache({ max: amount }),
   ],
-  // [`lru.min@${pkgJson.dependencies["lru.min"]}`, (amount: number) => createLRU({ max: amount })],
   [`lru_map@${pkgJson.dependencies.lru_map}`, (amount: number) => new LRUMap.LRUMap(amount)],
-  // [`picolru@${pkgJson.dependencies.picolru}`, (amount: number) => new PicoLRU({ maxSize: amount })],
   [
     `quick-lru@${pkgJson.dependencies["quick-lru"]}`,
     (amount: number) => new QuickLRU({ maxSize: amount }),
   ],
   [`semver@7.8`, (amount: number) => new SemverAfter(amount)],
   [`tiny-lru@${pkgJson.dependencies["tiny-lru"]}`, (amount: number) => tinyLru(amount)],
-  // [
-  //   `tiny-lru@${pkgJson.dependencies["tiny-lru11"].slice(13)}`,
-  //   (amount: number) => tinyLru11(amount),
-  // ],
-  // [
-  //   `tiny-lru@${pkgJson.dependencies["tiny-lru12"].slice(13)}`,
-  //   (amount: number) => tinyLru12(amount),
-  // ],
   [`ylru@${pkgJson.dependencies.ylru}`, (amount: number) => new YLRU(amount)],
 ])
 
@@ -192,6 +180,8 @@ barplot(() => {
 
     group("HAS (10 000)", () => {
       for (const [name, init] of caches.entries()) {
+        if (name.startsWith("ylru")) continue
+
         bench(name, function* () {
           yield {
             0(): Cache<string, string> {
@@ -260,5 +250,5 @@ barplot(() => {
   })
 })
 
-const results = await run({ throw: true })
-writeFileSync("bench.json", JSON.stringify(results))
+/*const results = */ await run({ throw: true })
+// writeFileSync("bench.json", JSON.stringify(results))
