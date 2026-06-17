@@ -1,0 +1,19 @@
+{
+  "name": "@bench/yaml",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --expose-gc ./bench.ts",
+    "test": "node --test tests.ts"
+  },
+  "dependencies": {
+    "js-yaml": "4.2.0",
+    "tinyyaml": "file:../../../tinyyaml",
+    "yaml": "2.9.0",
+    "yaml3": "npm:yaml@3.0.0-1"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "4.0.9"
+  }
+}

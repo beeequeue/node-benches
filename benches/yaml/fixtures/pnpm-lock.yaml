@@ -186,19 +186,12 @@ importers:
       js-yaml:
         specifier: 4.2.0
         version: 4.2.0
-      tinyyaml:
-        specifier: file:../../../tinyyaml
-        version: file:../tinyyaml
       yaml:
         specifier: 2.9.0
         version: 2.9.0
       yaml3:
         specifier: npm:yaml@3.0.0-1
         version: yaml@3.0.0-1
-    devDependencies:
-      '@types/js-yaml':
-        specifier: 4.0.9
-        version: 4.0.9
 
   benches/zip:
     dependencies:
@@ -521,9 +514,6 @@ packages:
 
   '@types/braces@3.0.5':
     resolution: {integrity: sha512-SQFof9H+LXeWNz8wDe7oN5zu7ket0qwMu5vZubW4GCJ8Kkeh6nBWUz87+KTz/G3Kqsrp0j/W253XJb3KMEeg3w==}
-
-  '@types/js-yaml@4.0.9':
-    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
   '@types/lodash.kebabcase@4.1.9':
     resolution: {integrity: sha512-kPrrmcVOhSsjAVRovN0lRfrbuidfg0wYsrQa5IYuoQO1fpHHGSme66oyiYA/5eQPVl8Z95OA3HG0+d2SvYC85w==}
@@ -902,10 +892,6 @@ packages:
     resolution: {integrity: sha512-Pugqs6M0m7Lv1I7FtxN4aoyToKg1C4tu+/381vH35y8oENM/Ai7f7C4StcoK4/+BSw9ebcS8jRiVrORFKCALLw==}
     engines: {node: ^20.0.0 || >=22.0.0}
 
-  tinyyaml@file:../tinyyaml:
-    resolution: {directory: ../tinyyaml, type: directory}
-    engines: {node: ^26}
-
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
@@ -1106,8 +1092,6 @@ snapshots:
   '@tsconfig/strictest@2.0.8': {}
 
   '@types/braces@3.0.5': {}
-
-  '@types/js-yaml@4.0.9': {}
 
   '@types/lodash.kebabcase@4.1.9':
     dependencies:
@@ -1476,8 +1460,6 @@ snapshots:
       when-exit: 2.1.5
 
   tinypool@2.1.0: {}
-
-  tinyyaml@file:../tinyyaml: {}
 
   to-regex-range@5.0.1:
     dependencies:

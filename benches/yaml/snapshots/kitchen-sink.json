@@ -1,0 +1,97 @@
+{
+  "string_plain": "Hello, World!",
+  "string_double_quotes": "Can contain special characters: \n, \t, \"",
+  "string_single_quotes": "Value with {placeholders}",
+  "boolean_true": true,
+  "boolean_false": false,
+  "null_value": null,
+  "empty_value": null,
+  "integer": 42,
+  "octal": 493,
+  "hexadecimal": 255,
+  "float_positive": 3.14,
+  "float_negative": -2.5,
+  "scientific": 120000,
+  "uppercase_infinity": null,
+  "negative_infinity": null,
+  "not_a_number": null,
+  "simple_list": ["apple", "banana", "orange"],
+  "inline_list": ["one", "two", "three", "four"],
+  "empty_list": [],
+  "simple_map": {
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+  },
+  "inline_map": {
+    "name": "John",
+    "age": 30,
+    "city": "NYC"
+  },
+  "empty_map": {},
+  "database": {
+    "development": {
+      "host": "localhost",
+      "port": 5432,
+      "name": "myapp_dev",
+      "credentials": {
+        "username": "dev_user",
+        "password": "secret123"
+      },
+      "pool_settings": {
+        "min_connections": 2,
+        "max_connections": 10,
+        "timeout": 30
+      }
+    },
+    "production": {
+      "host": "prod-db.example.com",
+      "port": 5432,
+      "name": "myapp_prod",
+      "credentials": {
+        "username": "prod_user",
+        "password": "prod_secret"
+      },
+      "pool_settings": {
+        "min_connections": 5,
+        "max_connections": 50,
+        "timeout": 60
+      }
+    }
+  },
+  "trimmed_string": "  spaces around  ",
+  "": "empty_key_value",
+  ":": "colon_key",
+  "yes": "yes",
+  "no": "no",
+  "on": "on",
+  "off": "off",
+  "zero": 0,
+  "zero_decimal": 0,
+  "million": "1_000_000",
+  "variants": [
+    100,
+    "200",
+    true,
+    [1, 2, 3],
+    {
+      "key": "value"
+    }
+  ],
+  "level1": {
+    "level2": {
+      "level3": {
+        "level4": {
+          "deep_value": "Successfully nested!"
+        }
+      }
+    }
+  },
+  "unicode": "Hello 世界 🌍",
+  "emoji_inline": "😀 😂 🎉",
+  "spaced": ["first", "second"],
+  "config": {
+    "debug_mode": true,
+    "log_level": "info"
+  }
+}

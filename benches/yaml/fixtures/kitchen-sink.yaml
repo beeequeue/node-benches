@@ -1,0 +1,165 @@
+# Scalars
+string_plain: Hello, World!
+string_double_quotes: "Can contain special characters: \n, \t, \""
+string_single_quotes: "Value with {placeholders}"
+boolean_true: true
+boolean_false: false
+null_value: null
+empty_value: ~
+integer: 42
+octal: 0o755
+hexadecimal: 0xFF
+float_positive: 3.14
+float_negative: -2.5
+scientific: 1.2e5
+uppercase_infinity: .Inf
+negative_infinity: -.Inf
+not_a_number: .NaN
+#timestamp: 2024-01-15T10:30:00.12345Z
+
+# Lists (arrays)
+simple_list:
+  - apple
+  - banana
+  - orange
+
+#nested_list:
+#  - name: Item 1
+#    value: 100
+#  - name: Item 2
+#      value: 200
+
+inline_list: [one, two, three, four]
+empty_list: []
+
+# Dictionaries (maps)
+simple_map:
+  key1: value1
+  key2: value2
+  key3: value3
+
+inline_map: { name: John, age: 30, city: NYC }
+empty_map: {}
+
+# Complex nesting
+database:
+  development:
+    host: localhost
+    port: 5432
+    name: myapp_dev
+    credentials:
+      username: dev_user
+      password: secret123
+    pool_settings:
+      min_connections: 2
+      max_connections: 10
+      timeout: 30
+  production:
+    host: prod-db.example.com
+    port: 5432
+    name: myapp_prod
+    credentials:
+      username: prod_user
+      password: prod_secret
+    pool_settings:
+      min_connections: 5
+      max_connections: 50
+      timeout: 60
+
+# Multiline strings
+#literal_style: |
+#  This string preserves
+#  newlines and whitespace
+#  exactly as written.
+
+#folded_style: >
+#  This string folds
+#  multiple lines into
+#  a single paragraph.
+
+# Strings with leading/trailing whitespace
+trimmed_string: "  spaces around  "
+
+# Empty keys and complex keys
+"": empty_key_value
+":": colon_key
+#? complex Key: with spaces
+#  : "value for complex key"
+
+# Flow-style nested structures
+#person:
+#  name: "Jane Doe"
+#  details: {age: 28, occupation: Engineer, department: R&D}
+#  addresses: [
+#    {type: home, street: "123 Main St", city: "Boston"},
+#    {type: work, street: "456 Tech Blvd", city: "San Francisco"}
+#  ]
+
+# Boolean variants
+yes: yes
+no: no
+on: on
+off: off
+
+# Special numeric cases
+zero: 0
+zero_decimal: 0.0
+million: 1_000_000
+
+# Base64 encoded string
+#binary_data: !!binary SGVsbG8gV29ybGQhCg==
+
+# Explicit types (using YAML 1.2 core schema)
+#integer_string: !!str "123"
+#boolean_string: !!str "true"
+#timestamp_as_string: !!str "2024-01-15"
+
+# Mixed type collection
+variants:
+  - 100
+  - "200"
+  - true
+  - [1, 2, 3]
+  - { key: value }
+
+# Deep nesting
+level1:
+  level2:
+    level3:
+      level4:
+        deep_value: "Successfully nested!"
+
+# Unicode characters
+unicode: "Hello 世界 🌍"
+emoji_inline: "😀 😂 🎉"
+
+# Empty lines and spacing preservation
+spaced:
+  - first
+  - second
+
+# Comments at various levels
+# This is a top-level comment
+config:
+  # This is an indented comment
+  debug_mode: true
+  log_level: info # inline comment
+
+
+# JSON-like compatibility (JSON is valid YAML)
+#json_compat:
+#  "firstName": "John",
+#  "lastName": "Smith",
+#  "isAlive": true,
+#  "age": 27,
+#  "address": {
+#    "street": "21 2nd Street",
+#    "city": "New York",
+#    "state": "NY",
+#    "zip": "10021-3100"
+#  },
+#  "phoneNumbers": [
+#    {"type": "home", "number": "212 555-1234"},
+#    {"type": "office", "number": "646 555-4567"}
+#  ],
+#  "children": []
