@@ -105,8 +105,6 @@ describe("match single file with a deep folder structure", () => {
   })
 })
 
-// describe("array matching multiple globs with a deep folder structure", () => {})
-
 describe("no match", () => {
   const path = "tests/foo/bar/index.test.ts"
   const glob = "src/**/*.test.ts"

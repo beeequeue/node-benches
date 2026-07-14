@@ -1,4 +1,4 @@
-import type { Buffer } from "node:buffer"
+import { type Buffer } from "node:buffer"
 import fs from "node:fs"
 
 import { barplot, bench, run, summary } from "mitata"

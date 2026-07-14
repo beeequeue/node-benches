@@ -1,5 +1,3 @@
-import { writeFileSync } from "node:fs"
-
 import { createLRU } from "alleviate"
 import FLRU from "flru"
 // import HashLRU from "hashlru"
@@ -97,7 +95,7 @@ barplot(() => {
 
             bench(cache: Cache<string, string>) {
               for (let i = 0; i < 10_000; i++) {
-                cache.set(longKeys[i]!.toString(), data[i]!.toString())
+                cache.set(longKeys[i]!, data[i]!.toString())
               }
               return cache
             },
@@ -137,7 +135,7 @@ barplot(() => {
             0(): Cache<string, string> {
               const cache = init(50_000)
               for (let i = 0; i < 10_000; i++) {
-                cache.set(longKeys[i]!.toString(), data[i]!.toString())
+                cache.set(longKeys[i], data[i]!.toString())
               }
               return cache
             },
@@ -145,7 +143,7 @@ barplot(() => {
             bench(cache: Cache<string, string>) {
               const arr = []
               for (let i = 0; i < 10_000; i++) {
-                arr.push(cache.get(longKeys[i]!.toString()))
+                arr.push(cache.get(longKeys[i]!))
               }
               return arr
             },
@@ -187,7 +185,7 @@ barplot(() => {
             0(): Cache<string, string> {
               const cache = init(50_000)
               for (let i = 0; i < 10_000; i++) {
-                cache.set(longKeys[i]!.toString(), data[i]!.toString())
+                cache.set(longKeys[i]!, data[i]!.toString())
               }
               return cache
             },
@@ -195,7 +193,7 @@ barplot(() => {
             bench(cache: Cache<string, string>) {
               const arr = []
               for (let i = 0; i < 10_000; i++) {
-                arr.push(cache.has(longKeys[i]!.toString()))
+                arr.push(cache.has(longKeys[i]!))
               }
               return arr
             },

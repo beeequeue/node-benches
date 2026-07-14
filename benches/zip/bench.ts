@@ -85,7 +85,8 @@ barplot(() => {
         const writePromise = pipeline(zipwriter.readable, fs.createWriteStream(outFile))
 
         for (const filePath of filesToZip) {
-          zipwriter.addEntry({
+          // oxlint-disable-next-line no-await-in-loop
+          await zipwriter.addEntry({
             name: filePath,
             store: true,
             readable: ReadableStream.from(fs.createReadStream(path.join(dirToZip, filePath))),
@@ -148,7 +149,8 @@ barplot(() => {
         const writePromise = pipeline(zipwriter.readable, fs.createWriteStream(outFile))
 
         for (const filePath of filesToZip) {
-          zipwriter.addEntry({
+          // oxlint-disable-next-line no-await-in-loop
+          await zipwriter.addEntry({
             name: filePath,
             store: false,
             readable: ReadableStream.from(fs.createReadStream(path.join(dirToZip, filePath))),

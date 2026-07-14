@@ -12,6 +12,7 @@ const command = define({
 })
 
 const args = "build -d dist --format esm --minify --target esnext --metafile".split(" ")
-console.log(args)
-console.log(process.argv.slice(2))
+// console.log(args)
+// console.log(process.argv.slice(2))
+// oxlint-disable-next-line typescript/no-unnecessary-condition
 await cli(process.argv.slice(2) ?? args, command)

@@ -12,13 +12,6 @@ minimumReleaseAgeExclude:
   - alleviate@0.0.0-alpha.2
 
 overrides:
-  "@eslint/markdown": "-"
-  "@stylistic/eslint-plugin": "-"
-  eslint-plugin-jsonc: "-"
-  eslint-plugin-toml: "-"
-  eslint-plugin-vue: "-"
-  eslint-plugin-yml: "-"
-  eslint-processor-vue-blocks: "-"
   indent-string: npm:@socketregistry/indent-string@^1
   is-core-module: npm:@socketregistry/is-core-module@^1
   jsonc-eslint-parser: "-"

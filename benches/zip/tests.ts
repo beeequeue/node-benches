@@ -107,7 +107,8 @@ describe(`zipping ${vueFileName}`, async () => {
       const writePromise = pipeline(zipwriter.readable, fs.createWriteStream(outFile))
 
       for (const filePath of filesToZip) {
-        zipwriter.addEntry({
+        // oxlint-disable-next-line no-await-in-loop
+        await zipwriter.addEntry({
           name: filePath,
           readable: ReadableStream.from(fs.createReadStream(path.join(dirToZip, filePath))),
         })
@@ -119,23 +120,4 @@ describe(`zipping ${vueFileName}`, async () => {
       await matchesUncompressedVueZip(t, outFile)
     })
   })
-
-  // describe.todo("with compression 9", () => {
-  //   it(YAZL, async () => {
-  //     const zipfile = new Yazl.ZipFile()
-  //     for (const filePath of filesToZip) {
-  //       zipfile.addReadStreamLazy(filePath, { compressionLevel: 9 }, (cb) =>
-  //         cb(null, fs.createReadStream(path.join(dirToZip, filePath))),
-  //       )
-  //     }
-  //     zipfile.end()
-  //
-  //     const outFile = path.join(outDir, YAZL, vueFileNameZip)
-  //     fs.mkdirSync(path.dirname(outFile), { recursive: true })
-  //     const writePromise = pipeline(zipfile.outputStream, fs.createWriteStream(outFile))
-  //     await writePromise
-  //
-  //     // await matchesUncompressedVueZip(t, outFile)
-  //   })
-  // })
 })

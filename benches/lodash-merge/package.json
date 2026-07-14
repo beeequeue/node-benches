@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "defu": "6.1.7",
-    "es-toolkit": "1.47.0",
+    "es-toolkit": "1.49.0",
     "lodash.merge": "4.6.2"
   },
   "devDependencies": {

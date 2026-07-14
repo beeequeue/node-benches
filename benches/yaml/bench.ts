@@ -1,13 +1,11 @@
 import * as jsYaml from "js-yaml"
-import { barplot, bench, group, type k_statefull, run, summary } from "mitata"
+import { barplot, bench, group, run, summary } from "mitata"
 import { getFixtures } from "tinyfixturez"
 import * as tinyyaml from "tinyyaml"
 import * as yaml from "yaml"
 import * as yaml3 from "yaml3"
 
 const fixtures = getFixtures(import.meta.dirname)
-
-type State = k_statefull<Record<"one" | "two", { array: string[] }>>
 
 const files = [
   ["small.yaml", fixtures.readString("small.yaml")],
