@@ -1,0 +1,19 @@
+{
+  "name": "@bench/object-hash",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --expose-gc ./bench.ts",
+    "test": "node --test tests.ts"
+  },
+  "dependencies": {
+    "object-hash": "3.0.0",
+    "object-identity": "0.2.3",
+    "ohash": "2.0.11",
+    "safe-stable-stringify": "2.5.0"
+  },
+  "devDependencies": {
+    "@types/object-hash": "3.0.6"
+  }
+}

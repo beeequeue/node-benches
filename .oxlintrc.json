@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "ignorePatterns": ["benches/gmd/*.js", "benches/*/versions/**"],
+  "ignorePatterns": ["benches/gmd/*.js", "benches/*/versions/**", "**/fixtures/**"],
   "plugins": ["oxc", "typescript", "unicorn", "import", "node", "promise"],
   "categories": {
     "correctness": "error",
