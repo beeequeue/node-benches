@@ -10,6 +10,8 @@ dedupePeerDependents: true
 minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
   - alleviate@0.0.0-alpha.2
+  # Renovate security update: js-yaml@5.4.1
+  - js-yaml@5.4.1
 
 overrides:
   indent-string: npm:@socketregistry/indent-string@^1
